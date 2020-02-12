@@ -18,3 +18,7 @@ otherwise (to stop training)
 Yet, it is been noticed with experiments that epsilon will reach its minimum (0.05) from the very beginning of the training, and thus, the agent might follow a greedy but not a well-trained path. To avoid this problem, epsilon is resetted at the beginning of each new episode with a value equal to (previous episode epsilon - 0.15). This can be seen in the `has_finished_epsiode()` method in the agent class. 
 
 Additionally, if the agent does not recognize the goal path (explained below) minimum epsilon (0.05) will be increased as the number of episodes increase to allow the agent to explore more. Furthermore, a new local variable has been introduced, `self.solved`, to check after each three episodes(`self.test_frequ`) if the greedy path is indeed the goal path; If that is the case, the target network will not be updated anymore, and the agent will always follow that greedy path.
+
+
+**Note:**
+This project has been done as one of the requirements of the Reinforcement Learning course at Imperial College London.
